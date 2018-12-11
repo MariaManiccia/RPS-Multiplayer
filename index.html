@@ -5,16 +5,81 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>RPS Game</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
     <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="app.js"></script>
+    <script src="assets/javascript/app.js"></script>
 </head>
 
 <body>
+    <div class="page-header col-12">
+        <h1>Rock Paper Scissors</h1>
+    </div>
+    <br>
+    <div id="name-area">
+        <form class="form-inline">
+            <div class="form-group mb-2">
+                <label for="staticEmail2" class="sr-only">Enter Your Name:</label>
+                <input type="text" readonly class="form-control-plaintext" id="staticEmail2" value="Enter Your Name">
+            </div>
+            <div class="form-group mx-sm-3 mb-2">
+                <label for="inputPassword2" class="sr-only">Your Name Here:</label>
+                <input type="password" class="form-control" id="inputPassword2" placeholder="Your Name Here">
+            </div>
+            <button type="submit" class="btn btn-primary mb-2">Submit</button>
+        </form>
+        <p id="status">Status Message</p>
+    </div>
 
-    
+    <br>
+    <div class="row" id="main-boxes">
+        <div class="card col-3" style="width: 16rem;">
+            <div class="card-body">
+                <h5 class="card-title">Player 1</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's content.</p>
+            </div>
+        </div>
+        <br>
+        <div class="card col-3" style="width: 16rem;">
+            <div class="card-body">
+                <h5 class="card-title"></h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's content.</p>
+            </div>
+        </div>
+        <br>
+        <div class="card col-3" style="width: 16rem;">
+            <div class="card-body">
+                <h5 class="card-title">Player 2</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's content.</p>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="row col-5" id="text-msg-area">
+        <div class="container">
+            <p id="player-text">Player</p>
+            <p>Hello. How are you today?</p>
+        </div>
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Your Text Goes Here" aria-label="Text"
+                aria-describedby="basic-addon2">
+            <div class="input-group-append">
+                <button class="btn btn-outline-secondary" type="button">Submit</button>
+            </div>
+        </div>
+    </div>
+
+
 
 </body>
 

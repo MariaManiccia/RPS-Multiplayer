@@ -1,0 +1,32 @@
+body{
+    background-color: rgb(130, 248, 248);
+}
+
+.page-header {
+    text-align: center;
+    background-color: rgb(103, 212, 176);
+    color: black;
+}
+
+#name-area {
+    padding-left: 32%;
+    text-align: center;
+}
+
+#status {
+    display: inline;
+    text-align: center;
+    padding-right: 54%;
+}
+
+#text-msg-area {
+    border: 2px solid #dedede;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    padding: 10px;
+    margin-left: 30%;
+}
+
+#main-boxes{
+    padding-left: 22%;
+}
