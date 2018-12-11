@@ -9,14 +9,14 @@ body{
 }
 
 #name-area {
-    padding-left: 32%;
+    padding-left: 38%;
     text-align: center;
 }
 
 #status {
     display: inline;
     text-align: center;
-    padding-right: 54%;
+    padding-right: 66%;
 }
 
 #text-msg-area {
@@ -28,5 +28,5 @@ body{
 }
 
 #main-boxes{
-    padding-left: 22%;
+    padding-left: 20%;
 }
