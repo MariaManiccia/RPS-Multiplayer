@@ -1,82 +1,83 @@
-<!DOCTYPE <!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
 
 <head>
     <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>RPS Game</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-        crossorigin="anonymous">
+    <title>RPS Multiplayer</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-        crossorigin="anonymous"></script>
     <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+        crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
     <script src="assets/javascript/app.js"></script>
 </head>
 
 <body>
-    <div class="page-header col-12">
+
+    <header class="page-header col-12">
         <h1>Rock Paper Scissors</h1>
-    </div>
-    <br>
-    <div id="name-area">
-        <form class="form-inline">
-            <div class="form-group mx-sm-3 mb-2">
-                <label for="inputPassword2" class="sr-only">Your Name Here:</label>
-                <input type="text" class="form-control" id="inputPassword2" placeholder="Your Name Here">
-            </div>
-            <button type="submit" class="btn btn-primary mb-2">Submit</button>
-        </form>
-        <p id="status">Status Message</p>
-    </div>
-
-    <br>
-    <div class="row" id="main-boxes">
-        <div class="card col-3" style="width: 16rem;">
-            <div class="card-body">
-                <h5 class="card-title">Player 1</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                    card's content.</p>
-            </div>
-        </div>
-        <br>
-        <div class="card col-3" style="width: 16rem;">
-            <div class="card-body">
-                <h5 class="card-title"></h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                    card's content.</p>
-            </div>
-        </div>
-        <br>
-        <div class="card col-3" style="width: 16rem;">
-            <div class="card-body">
-                <h5 class="card-title">Player 2</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                    card's content.</p>
-            </div>
-        </div>
-    </div>
-    <br>
-    <div class="row col-5" id="text-msg-area">
-        <div class="container">
-            <p id="player-text">Player</p>
-            <p>Hello. How are you today?</p>
-        </div>
-        <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="Your Text Goes Here" aria-label="Text"
-                aria-describedby="basic-addon2">
-            <div class="input-group-append">
-                <button class="btn btn-outline-secondary" type="button">Submit</button>
-            </div>
-        </div>
-    </div>
+    </header>
 
 
+    <div class="container">
+        <div class="row text-center">
+            <div class="row text-center">
 
+                <div class="col-xs-5 jumbotron" id="p1display">Waiting for P1 to enter a name...</div>
+                <div class="col-xs-2 text-center" id="outcome" style="padding-top:20px"></div>
+                <div class="col-xs-5 jumbotron" id="p2display">Waiting for P2 to enter a name...</div>
+
+            </div>
+            <div class="row">
+                <div class="col-xs-1"></div>
+                <div class="col-xs-10 jumbotron" style="margin-bottom:10px;" id="formcontain">
+                    <form id="name-form">
+                        <input type="text" id="name-input" placeholder="Your Name">
+                        <input id="add-name" type="submit" value="Submit">
+                    </form>
+                </div>
+                <div class="col-xs-1"></div>
+            </div>
+            <div class="row" style="margin:15px;">
+                <div class="col-xs-4">
+                    
+                    <button class="btn-primary" id="rock">Rock</button>
+                </div>
+                <div class="col-xs-4">
+                    
+                    <button class="btn-primary" id="paper">Paper</button>
+                </div>
+                <div class="col-xs-4">
+                    
+                    <button class="btn-primary" id="scissors">Scissors</i></button>
+                </div>
+            </div>
+            <div class="row">
+                
+                <div class="col-xs-12">
+                    <div id="chatdisplay" class="text-left"></div>
+                </div>
+                <div class="col-xs-12">
+                    
+                    <div class="chatInput">
+                        <div class="chatLabel">Type Your Message!</div>
+
+                        <div class="chatPanel">
+                            <form id="chat-form">
+                                <textarea type="text" id="chat-text"></textarea>
+                                <input id="chat-send" type="submit" value="Send">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 </body>
 
 </html>

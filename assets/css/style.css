@@ -1,32 +1,49 @@
-body{
-    background-color: rgb(130, 248, 248);
+body {
+    background-image: url("c:/RPS-Multiplayer/assets/images/bgimg.jpg")
 }
 
 .page-header {
     text-align: center;
-    background-color: rgb(103, 212, 176);
+    background-color: rgb(177, 206, 150);
     color: black;
-}
-
-#name-area {
-    padding-left: 38%;
-    text-align: center;
-}
-
-#status {
-    display: inline;
-    text-align: center;
-    padding-right: 66%;
-}
-
-#text-msg-area {
-    border: 2px solid #dedede;
-    background-color: #f1f1f1;
-    border-radius: 5px;
     padding: 10px;
-    margin-left: 30%;
 }
 
-#main-boxes{
+#outcome{
+    background-color: tan;
+    width: 150px;
+    height: 120px;
+}
+
+.yourTurn {
+    background-color: rgb(177, 210, 193);
+}
+
+#p1name, #p2name {
+    font-weight: bold;
+}
+
+button {
+    width: 100%;
+}
+
+.btn-primary {
+    height: 60px;
+}
+
+.jumbotron p {
+    font-size: 12px;
+    margin-bottom: 0px;
+}
+
+.p1color {
+    color: #b03138;
+}
+
+.p2color {
+    color: #084596;
+}
+
+#main-boxes {
     padding-left: 20%;
 }
