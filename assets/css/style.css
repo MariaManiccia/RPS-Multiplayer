@@ -1,5 +1,5 @@
 body {
-    background-image: url("c:/RPS-Multiplayer/assets/images/bgimg.jpg")
+    background-image: url("assets/images/bgimg.jpg")
 }
 
 .page-header {
@@ -34,14 +34,6 @@ button {
 .jumbotron p {
     font-size: 12px;
     margin-bottom: 0px;
-}
-
-.p1color {
-    color: #b03138;
-}
-
-.p2color {
-    color: #084596;
 }
 
 #main-boxes {

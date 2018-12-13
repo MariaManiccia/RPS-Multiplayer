@@ -110,15 +110,6 @@ $(document).ready(function () {
         var chatMsg = snapshot.val();
         var chatEntry = $("<div>").html(chatMsg);
 
-        // color code the messages
-        if (chatMsg.startsWith(yourPlayerName)) {
-
-            chatEntry.addClass("p1color");
-
-        } else {
-            chatEntry.addClass("p2color");
-        }
-
         $("#chatdisplay").append(chatEntry);
 
         // to scroll correctly
