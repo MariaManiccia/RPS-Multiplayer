@@ -240,9 +240,9 @@ $(document).ready(function () {
     });
 
     $("#scissors").on("click", function () {
-        
+
         if (p1 && p2 && (yourPlayerName === p1.name) && (turn === 1)) {
-            
+
             var choice = $(this).text().trim();
             console.log("player selected " + $(this).text());
             p1Choice = choice;
@@ -257,7 +257,7 @@ $(document).ready(function () {
         event.preventDefault();
 
         if (p1 && p2 && (yourPlayerName === p2.name) && (turn === 2)) {
-            
+
             var choice = $(this).text().trim();
             p2Choice = choice;
             database.ref().child("/players/p2/choice").set(choice);
@@ -268,7 +268,7 @@ $(document).ready(function () {
     $("#paper").on("click", function () {
         event.preventDefault();
         if (p1 && p2 && (yourPlayerName === p2.name) && (turn === 2)) {
-            
+
             var choice = $(this).text().trim();
             p2Choice = choice;
             database.ref().child("/players/p2/choice").set(choice);
@@ -280,7 +280,7 @@ $(document).ready(function () {
         event.preventDefault();
 
         if (p1 && p2 && (yourPlayerName === p2.name) && (turn === 2)) {
-            
+
             var choice = $(this).text().trim();
             p2Choice = choice;
             database.ref().child("/players/p2/choice").set(choice);
@@ -303,7 +303,7 @@ $(document).ready(function () {
                 database.ref().child("/outcome/").set("Paper wins!");
                 database.ref().child("/players/p1/loss").set(p1.loss + 1);
                 database.ref().child("/players/p2/win").set(p2.win + 1);
-            } else { 
+            } else {
                 // player one wins
                 console.log("rock wins");
                 database.ref().child("/outcome/").set("Rock wins!");
@@ -323,7 +323,7 @@ $(document).ready(function () {
                 database.ref().child("/outcome/").set("Tie game!");
                 database.ref().child("/players/p1/tie").set(p1.tie + 1);
                 database.ref().child("/players/p2/tie").set(p2.tie + 1);
-            } else { 
+            } else {
                 // player two wins
                 console.log("scissors win");
                 database.ref().child("/outcome/").set("Scissors win!");
